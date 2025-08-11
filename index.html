@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML5 Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+        main {
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+        }
+        form {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 0.5rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: auto;
+            padding: 0.7rem 1.5rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Sample Web Page</h1>
+    <nav>
+        <a href="#lists">Lists</a>
+        <a href="#tables">Tables</a>
+        <a href="#media">Media</a>
+        <a href="#form">Form</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Lists Section -->
+    <section id="lists">
+        <h2>Popular Programming Languages</h2>
+        <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>C#</li>
+        </ul>
+        <h3>Steps to Learn a New Language</h3>
+        <ol>
+            <li>Understand the basics</li>
+            <li>Write simple programs</li>
+            <li>Explore frameworks and libraries</li>
+            <li>Build projects</li>
+        </ol>
+    </section>
+
+    <!-- Table Section -->
+    <section id="tables">
+        <h2>Programming Language Popularity</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Ranking</th>
+                    <th>First Appeared</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Python</td>
+                    <td>1</td>
+                    <td>1991</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>2</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>3</td>
+                    <td>1995</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media">
+        <h2>Learn Coding</h2>
+        <p>Watch this short video introduction to programming:</p>
+        <video width="480" controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Or listen to this podcast episode:</p>
+        <audio controls>
+            <source src="sample-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form">
+        <h2>Sign Up Form</h2>
+        <form action="#" method="post">
+            
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required minlength="2" maxlength="30">
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required minlength="2" maxlength="30">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g. 0712345678" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required pattern="[A-Za-z0-9_]{5,15}" title="5-15 letters, numbers, or underscores only">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="At least 8 characters">
+
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">--Select Role--</option>
+                    <option value="developer">Developer</option>
+                    <option value="designer">Designer</option>
+                    <option value="manager">Manager</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <label>
+                    <input type="checkbox" name="newsletter" value="yes">
+                    Subscribe to newsletter
+                </label>
+                
+                <p>Preferred Contact Method:</p>
+                <label><input type="radio" name="contact" value="email" required> Email</label>
+                <label><input type="radio" name="contact" value="phone"> Phone</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Comments</legend>
+                <label for="comments">Message:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Write your message here..."></textarea>
+            </fieldset>
+
+            <input type="submit" value="Submit Form">
+
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 My Sample Website</p>
+</footer>
+
+</body>
+</html>
